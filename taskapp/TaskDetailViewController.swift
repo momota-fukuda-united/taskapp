@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateTaskViewController: UIViewController {
+class TaskDetailViewController: UIViewController {
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var contentsTextView: UITextView!
     @IBOutlet private weak var datePicker: UIDatePicker!
