@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let taskDetailViewController = segue.description as! TaskDetailViewController
+        let taskDetailViewController = segue.destination as! TaskDetailViewController
         
         taskDetailViewController.task = self.getOrCreateShownTask(showTaskDetailSegue: segue)
     }
