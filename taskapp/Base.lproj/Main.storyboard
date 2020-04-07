@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--Create Task View Controller-->
+        <!--Task Detail View Controller-->
         <scene sceneID="RHU-ZX-nqz">
             <objects>
-                <viewController id="TkM-Cj-nUe" customClass="CreateTaskViewController" customModule="taskapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TkM-Cj-nUe" customClass="TaskDetailViewController" customModule="taskapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n0f-2m-Jb7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +167,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IxB-cG-FBY"/>
+        <segue reference="MhF-7E-K3v"/>
     </inferredMetricsTieBreakers>
 </document>
