@@ -93,13 +93,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTo-25-tcV">
-                                <rect key="frame" x="10" y="173" width="394" height="21"/>
+                                <rect key="frame" x="10" y="248" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B0H-Ul-Ovh">
-                                <rect key="frame" x="10" y="204" width="394" height="120"/>
+                                <rect key="frame" x="10" y="279" width="394" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="dxn-0y-AGE"/>
@@ -110,34 +110,52 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-rS-cxW">
-                                <rect key="frame" x="10" y="334" width="394" height="120"/>
+                                <rect key="frame" x="10" y="409" width="394" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="RRC-4v-wsN"/>
                                 </constraints>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQu-Ro-IBb">
+                                <rect key="frame" x="10" y="173" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-LK-MvO">
+                                <rect key="frame" x="10" y="204" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="QQu-Ro-IBb" firstAttribute="top" secondItem="Dfw-UR-dH2" secondAttribute="bottom" constant="10" id="0Qc-8h-sWO"/>
+                            <constraint firstItem="E94-9L-lxC" firstAttribute="trailing" secondItem="3DD-LK-MvO" secondAttribute="trailing" constant="10" id="0UR-C3-aFl"/>
                             <constraint firstItem="Ie7-rS-cxW" firstAttribute="top" secondItem="B0H-Ul-Ovh" secondAttribute="bottom" constant="10" id="2Rn-yV-hfZ"/>
+                            <constraint firstItem="3DD-LK-MvO" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="4We-Dv-mX6"/>
                             <constraint firstItem="Ie7-rS-cxW" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="5xE-Go-cQ9"/>
                             <constraint firstItem="Dfw-UR-dH2" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="6yn-AI-1hf"/>
                             <constraint firstItem="E94-9L-lxC" firstAttribute="trailing" secondItem="3SW-yY-ixe" secondAttribute="trailing" constant="10" id="A9N-0K-9Mv"/>
-                            <constraint firstItem="HTo-25-tcV" firstAttribute="top" secondItem="Dfw-UR-dH2" secondAttribute="bottom" constant="10" id="E9l-OW-lpO"/>
+                            <constraint firstItem="HTo-25-tcV" firstAttribute="top" secondItem="3DD-LK-MvO" secondAttribute="bottom" constant="10" id="E9l-OW-lpO"/>
                             <constraint firstItem="3SW-yY-ixe" firstAttribute="top" secondItem="E94-9L-lxC" secondAttribute="top" constant="10" id="Hh7-05-W3E"/>
                             <constraint firstItem="E94-9L-lxC" firstAttribute="trailing" secondItem="HTo-25-tcV" secondAttribute="trailing" constant="10" id="MJ6-b1-ET7"/>
                             <constraint firstAttribute="trailing" secondItem="Dfw-UR-dH2" secondAttribute="trailing" constant="10" id="Pee-CR-6MS"/>
                             <constraint firstItem="B0H-Ul-Ovh" firstAttribute="top" secondItem="HTo-25-tcV" secondAttribute="bottom" constant="10" id="RAq-Gn-0vT"/>
+                            <constraint firstItem="3DD-LK-MvO" firstAttribute="top" secondItem="QQu-Ro-IBb" secondAttribute="bottom" constant="10" id="SAm-dJ-hF4"/>
                             <constraint firstItem="E94-9L-lxC" firstAttribute="trailing" secondItem="Ie7-rS-cxW" secondAttribute="trailing" constant="10" id="So2-k3-89s"/>
                             <constraint firstItem="HTo-25-tcV" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="XFD-xI-CHA"/>
                             <constraint firstItem="E94-9L-lxC" firstAttribute="trailing" secondItem="B0H-Ul-Ovh" secondAttribute="trailing" constant="10" id="Zh8-JM-KFR"/>
                             <constraint firstItem="Dfw-UR-dH2" firstAttribute="top" secondItem="3SW-yY-ixe" secondAttribute="bottom" constant="10" id="eBb-dx-SS9"/>
+                            <constraint firstItem="QQu-Ro-IBb" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="mXw-xS-UEM"/>
                             <constraint firstItem="3SW-yY-ixe" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="vpv-yZ-0b7"/>
+                            <constraint firstItem="E94-9L-lxC" firstAttribute="trailing" secondItem="QQu-Ro-IBb" secondAttribute="trailing" constant="10" id="xGi-Bf-Ouh"/>
                             <constraint firstItem="B0H-Ul-Ovh" firstAttribute="leading" secondItem="E94-9L-lxC" secondAttribute="leading" constant="10" id="zxT-a8-OMN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E94-9L-lxC"/>
                     </view>
                     <navigationItem key="navigationItem" id="hfW-w4-p5p"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="3DD-LK-MvO" id="w9b-rg-0NI"/>
                         <outlet property="contentsTextView" destination="B0H-Ul-Ovh" id="nFZ-T8-h07"/>
                         <outlet property="datePicker" destination="Ie7-rS-cxW" id="p6g-Dc-bV3"/>
                         <outlet property="titleTextField" destination="Dfw-UR-dH2" id="e5n-8C-C2z"/>

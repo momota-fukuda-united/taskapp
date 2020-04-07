@@ -12,6 +12,7 @@ import UserNotifications
 
 class TaskDetailViewController: UIViewController {
     @IBOutlet private var titleTextField: UITextField!
+    @IBOutlet private weak var categoryTextField: UITextField!
     @IBOutlet private var contentsTextView: UITextView!
     @IBOutlet private var datePicker: UIDatePicker!
     
@@ -26,6 +27,7 @@ class TaskDetailViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
         
         self.titleTextField.text = self.task.title
+        self.categoryTextField.text = self.task.category
         self.contentsTextView.text = self.task.contents
         self.datePicker.date = self.task.date
     }
@@ -33,6 +35,7 @@ class TaskDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         try! self.realm.write {
             self.task.title = self.titleTextField.text!
+            self.task.category = self.categoryTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
             self.realm.add(self.task, update: .modified)
