@@ -10,6 +10,8 @@ import RealmSwift
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private let selectTaskSegueId = "selectTask"
+    
     @IBOutlet private var taskTabkeView: UITableView!
     private let realm = try! Realm()
     private var tasks = try! Realm().objects(TaskModel.self).sorted(byKeyPath: "date", ascending: true)
@@ -34,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func getOrCreateShownTask(showTaskDetailSegue: UIStoryboardSegue) -> TaskModel {
-        if showTaskDetailSegue.identifier == "selectTask" {
+        if showTaskDetailSegue.identifier == self.selectTaskSegueId {
             let indexPath = self.taskTabkeView.indexPathForSelectedRow
             return self.tasks[indexPath!.row]
         }
@@ -69,7 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showTaskDetail", sender: nil)
+        self.performSegue(withIdentifier: self.selectTaskSegueId, sender: nil)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
