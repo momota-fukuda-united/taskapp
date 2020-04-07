@@ -83,9 +83,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         
+        let task = self.tasks[indexPath.row]
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [String(task.id)])
+        
         try! self.realm.write {
             self.realm.delete(self.tasks[indexPath.row])
             self.taskTabkeView.deleteRows(at: [indexPath], with: .fade)
         }
+        
+        notificationCenter.getPendingNotificationRequests(completionHandler: { (requests: [UNNotificationRequest]) in
+            for request in requests {
+                print("/---------------")
+                print(request)
+                print("---------------/")
+            }
+        })
     }
 }
