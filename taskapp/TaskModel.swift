@@ -9,6 +9,8 @@
 import RealmSwift
 
 class TaskModel: Object {
+    var defaultCategory = ""
+    
     // 管理用 ID。プライマリーキー
     @objc dynamic var id = 0
 
@@ -21,8 +23,8 @@ class TaskModel: Object {
     // 日時
     @objc dynamic var date = Date()
     
-    @objc dynamic var category = ""
-
+    @objc dynamic var category: CategoryModel? = nil
+    
     // id をプライマリーキーとして設定
     override static func primaryKey() -> String? {
         return "id"

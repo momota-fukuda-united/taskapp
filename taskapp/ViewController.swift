@@ -9,11 +9,11 @@
 import RealmSwift
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DecideCategoryProtocol {
     private let selectTaskSegueId = "selectTask"
     
     @IBOutlet private var taskTabkeView: UITableView!
-    @IBOutlet private var categorySearchBar: UISearchBar!
+    @IBOutlet private var filterCategoryLabel: UILabel!
     
     private let realm = try! Realm()
     private var tasks = try! Realm().objects(TaskModel.self).sorted(byKeyPath: "date", ascending: true)
@@ -24,13 +24,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.taskTabkeView.dataSource = self
         self.taskTabkeView.delegate = self
-        self.categorySearchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let taskDetailViewController = segue.destination as! TaskDetailViewController
+        let taskDetailViewController = segue.destination as? TaskDetailViewController
         
-        taskDetailViewController.task = self.getOrCreateShownTask(showTaskDetailSegue: segue)
+        taskDetailViewController?.task = self.getOrCreateShownTask(showTaskDetailSegue: segue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +51,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         return newTask
+    }
+    
+    private func filterByCategory(category: CategoryModel) {
+        self.filterCategoryLabel.text = category.name
+        
+        self.tasks = try! Realm().objects(TaskModel.self)
+            .filter(NSPredicate(format: "category.id = \(category.id)", argumentArray: nil))
+            .sorted(byKeyPath: "date", ascending: true)
+        
+        self.taskTabkeView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,12 +114,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let category = searchBar.text!
-        self.tasks = try! Realm().objects(TaskModel.self)
-            .filter("category = '\(category)'")
-            .sorted(byKeyPath: "date", ascending: true)
-        
-        self.taskTabkeView.reloadData()
+    func decide(category: CategoryModel) {
+        self.filterByCategory(category: category)
     }
 }

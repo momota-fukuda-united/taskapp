@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		07EC1D3917C5ABAAFFA0BA99 /* Pods_taskapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0B78F8D65D2072C1F8D5E7 /* Pods_taskapp.framework */; };
+		A04095EC243C7E3200C568CB /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04095EB243C7E3200C568CB /* CategoryModel.swift */; };
+		A04095EE243D5CAC00C568CB /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04095ED243D5CAC00C568CB /* CreateCategoryViewController.swift */; };
+		A04095F0243D6B6200C568CB /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04095EF243D6B6200C568CB /* SelectCategoryViewController.swift */; };
+		A04095F2243D9E3A00C568CB /* DecideCategoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04095F1243D9E3A00C568CB /* DecideCategoryProtocol.swift */; };
 		A06ADDE3243B0F4C0013748F /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06ADDE2243B0F4C0013748F /* TaskDetailViewController.swift */; };
 		A06ADDE5243B24540013748F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06ADDE4243B24540013748F /* TaskModel.swift */; };
 		A09AF940243AC17600FCF0F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AF93F243AC17600FCF0F6 /* AppDelegate.swift */; };
@@ -20,6 +24,10 @@
 
 /* Begin PBXFileReference section */
 		7F0B78F8D65D2072C1F8D5E7 /* Pods_taskapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taskapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A04095EB243C7E3200C568CB /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		A04095ED243D5CAC00C568CB /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
+		A04095EF243D6B6200C568CB /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		A04095F1243D9E3A00C568CB /* DecideCategoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideCategoryProtocol.swift; sourceTree = "<group>"; };
 		A06ADDE2243B0F4C0013748F /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		A06ADDE4243B24540013748F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		A09AF93C243AC17600FCF0F6 /* taskapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +93,10 @@
 				A09AF94D243AC17700FCF0F6 /* Info.plist */,
 				A06ADDE2243B0F4C0013748F /* TaskDetailViewController.swift */,
 				A06ADDE4243B24540013748F /* TaskModel.swift */,
+				A04095EB243C7E3200C568CB /* CategoryModel.swift */,
+				A04095ED243D5CAC00C568CB /* CreateCategoryViewController.swift */,
+				A04095EF243D6B6200C568CB /* SelectCategoryViewController.swift */,
+				A04095F1243D9E3A00C568CB /* DecideCategoryProtocol.swift */,
 			);
 			path = taskapp;
 			sourceTree = "<group>";
@@ -214,9 +226,13 @@
 			files = (
 				A09AF944243AC17600FCF0F6 /* ViewController.swift in Sources */,
 				A09AF940243AC17600FCF0F6 /* AppDelegate.swift in Sources */,
+				A04095F0243D6B6200C568CB /* SelectCategoryViewController.swift in Sources */,
 				A06ADDE5243B24540013748F /* TaskModel.swift in Sources */,
 				A09AF942243AC17600FCF0F6 /* SceneDelegate.swift in Sources */,
 				A06ADDE3243B0F4C0013748F /* TaskDetailViewController.swift in Sources */,
+				A04095EE243D5CAC00C568CB /* CreateCategoryViewController.swift in Sources */,
+				A04095EC243C7E3200C568CB /* CategoryModel.swift in Sources */,
+				A04095F2243D9E3A00C568CB /* DecideCategoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

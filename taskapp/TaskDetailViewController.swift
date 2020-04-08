@@ -10,9 +10,9 @@ import RealmSwift
 import UIKit
 import UserNotifications
 
-class TaskDetailViewController: UIViewController {
+class TaskDetailViewController: UIViewController, DecideCategoryProtocol {
     @IBOutlet private var titleTextField: UITextField!
-    @IBOutlet private weak var categoryTextField: UITextField!
+    @IBOutlet private var selectCategoryButton: UIButton!
     @IBOutlet private var contentsTextView: UITextView!
     @IBOutlet private var datePicker: UIDatePicker!
     
@@ -25,9 +25,13 @@ class TaskDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.titleTextField.text = self.task.title
-        self.categoryTextField.text = self.task.category
+        if self.task.category != nil {
+            self.selectCategoryButton.setTitle(self.task.category!.name, for: .normal)
+        }
         self.contentsTextView.text = self.task.contents
         self.datePicker.date = self.task.date
     }
@@ -35,7 +39,6 @@ class TaskDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         try! self.realm.write {
             self.task.title = self.titleTextField.text!
-            self.task.category = self.categoryTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
             self.realm.add(self.task, update: .modified)
@@ -71,6 +74,14 @@ class TaskDetailViewController: UIViewController {
                 print("---------------/")
             }
         })
+    }
+    
+    func decide(category: CategoryModel) {
+        try! self.realm.write {
+            self.task.category = category
+        }
+        
+        self.selectCategoryButton.setTitle(self.task.category!.name, for: .normal)
     }
     
     @objc private func dismissKeyboard() {
